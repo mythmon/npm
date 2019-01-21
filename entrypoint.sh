@@ -5,8 +5,8 @@ set -e
 GIT_AUTHOR_NAME=${GIT_AUTHOR_NAME-"Automated Github Action"}
 GIT_AUTHOR_EMAIL=${GIT_AUTHOR_EMAIL-"actions@github.io"}
 
-git config user.name "$GIT_AUTHOR_NAME"
-git config user.email "$GIT_AUTHOR_EMAIL"
+git config --global user.name "$GIT_AUTHOR_NAME"
+git config --global user.email "$GIT_AUTHOR_EMAIL"
 
 if [ -n "$NPM_AUTH_TOKEN" ]; then
   # Respect NPM_CONFIG_USERCONFIG if it is provided, default to $HOME/.npmrc
