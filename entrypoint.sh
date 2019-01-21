@@ -2,6 +2,9 @@
 
 set -e
 
+export GIT_AUTHOR_NAME=${GIT_AUTHOR_NAME-"Automated Github Action"}
+export GIT_AUTHOR_EMAIL=${GIT_AUTHOR_EMAIL-"actions@github.io"}
+
 if [ -n "$NPM_AUTH_TOKEN" ]; then
   # Respect NPM_CONFIG_USERCONFIG if it is provided, default to $HOME/.npmrc
   NPM_CONFIG_USERCONFIG="${NPM_CONFIG_USERCONFIG-"$HOME/.npmrc"}"
