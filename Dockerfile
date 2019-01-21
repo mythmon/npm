@@ -11,7 +11,9 @@ LABEL com.github.actions.icon="package"
 LABEL com.github.actions.color="red"
 COPY LICENSE README.md THIRD_PARTY_NOTICE.md /
 
-RUN apt-get update && apt-get install -y git
+RUN apt-get update && apt-get install -y git && \
+    git config --global user.email "actions@github.io"
+    git config --global user.name "Automated Github Action" && \
 
 COPY "entrypoint.sh" "/entrypoint.sh"
 ENTRYPOINT ["/entrypoint.sh"]
